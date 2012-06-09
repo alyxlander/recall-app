@@ -1,0 +1,26 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf8">  
+  <title><%= @title + ' | Recall' %></title>  
+  <link href="/reset.css" rel="stylesheet">  
+  <link href="/style.css" rel="stylesheet">  
+</head>  
+<body>  
+  <header>  
+    <hgroup>  
+      <h1><a href="/">Recall</a></h1>  
+      <h2><i>A note taking app</i></h2>  
+    </hgroup>  
+  </header>  
+  
+  <div id="main">  
+    <%= yield %>  
+  </div>  
+  
+  
+</body>  
+</html> 
+
+<!--line 5 uses the ERB tag for title-->
+<!--line 18 makes sinatra display this layout.erb routes -->
