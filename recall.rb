@@ -25,7 +25,7 @@ DataMapper.auto_upgrade!
 
 #------------------------------------------------------------------------------#
 # @notes retrieves notes from the database and assigns the notes to itself
-# @ title sets the title
+# @title sets the title
 # erb :home summons home.erb which containts part of the html code
 get '/' do
 	@notes = Note.all :order => :id.desc
@@ -54,7 +54,7 @@ get '/:id' do
 end
 #------------------------------------------------------------------------------#
 # Creates a route by:
-# gets the notes id int from the URI
+# getting the notes id int from the URI
 # sets the content, complete, and updated_at to currect values
 # saves then redirects back to the homepage
 put '/:id' do
@@ -66,14 +66,14 @@ put '/:id' do
 	redirect '/'
 end
 #------------------------------------------------------------------------------#
-# Allows users to delete posts
+# Confirmation to delete post.
 get '/:id/delete' do
 	@note = Note.get params[:id]
 	@title = "Confirm deletion of note ##{params[:id]}"
 	erb :delete
 end
 #------------------------------------------------------------------------------#
-#The 'delete route'
+#The 'delete route' deletes the post then redirects to homepage
 delete '/:id' do
 	n = Note.get params[:id]
 	n.destroy
